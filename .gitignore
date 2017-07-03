@@ -1,2 +1,13 @@
-*.class
-*.log
+.settings
+gradlew
+target/
+/bin/
+!gradle-wrapper.jar
+gradle
+.gradle
+/build/
+/.cache-main
+/.classpath
+/.project
+/.cache-tests
+/.history
