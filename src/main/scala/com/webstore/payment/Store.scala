@@ -4,6 +4,9 @@ import akka.actor.Actor
 import akka.actor.Props
 import akka.event.Logging
 
+/**
+ * Store Message Factory
+ */
 object Store {
   case class Open()
   case class Close()

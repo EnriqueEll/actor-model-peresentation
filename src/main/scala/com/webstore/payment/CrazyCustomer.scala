@@ -5,6 +5,9 @@ import akka.event.Logging
 import akka.actor.ActorRef
 import com.webstore.payment.Payment._
 
+/**
+ * Cart Message Factory
+ */
 object Cart {
   case class Checkout(value: Double, payMethod: PayMethod)
 }

@@ -3,6 +3,9 @@ package com.webstore.payment
 import akka.actor.Actor
 import akka.event.Logging
 
+/**
+ * Payment Message Factory
+ */
 object Payment {
   trait PayMethod
   case class CreditCar(flag: String) extends PayMethod
