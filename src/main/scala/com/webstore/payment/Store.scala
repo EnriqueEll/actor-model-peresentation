@@ -3,7 +3,7 @@ package com.webstore.payment
 import akka.actor.Actor
 import akka.actor.Props
 
-object StoreStatus {
+object Store {
   case class Open()
   case class Close()
 }
@@ -14,11 +14,11 @@ class Store extends Actor{
   
   override def preStart() ={
     val crazyCustomer =  context.actorOf(Props(classOf[CrazyCustomer], self), "crazyCustomer")
-    crazyCustomer ! StoreStatus.Open
+    crazyCustomer ! Store.Open
   }
   
   def receive = {
-    case Payment.Checkout(value) => 
-      orderChecker ! Payment.Checkout(value)
+    case checkout:Cart.Checkout => 
+      orderChecker ! checkout
   }
 }
