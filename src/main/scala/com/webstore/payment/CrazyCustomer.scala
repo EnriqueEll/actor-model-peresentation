@@ -20,7 +20,7 @@ class CrazyCustomer(store: ActorRef) extends Actor {
         val payMethod = if (a % 2 == 0)
           CreditCar("MasterCard")
         else
-          PayPal(s"User $a")
+          PayPal(s"User-$a")
 
         store ! Cart.Checkout(250.00 / a, payMethod)
       }
