@@ -2,6 +2,7 @@ package com.webstore.payment
 
 import akka.actor.Actor
 import akka.actor.Props
+import akka.event.Logging
 
 object Store {
   case class Open()
@@ -9,6 +10,7 @@ object Store {
 }
 
 class Store extends Actor{
+  val log = Logging(context.system, this)
   
   val orderChecker = context.actorOf(Props[OrderCheckout], "orderChecker")
   
@@ -19,6 +21,7 @@ class Store extends Actor{
   
   def receive = {
     case checkout:Cart.Checkout => 
+      log.info(s"Customer wants checkout a cart with value: US$$ ${checkout.value}")
       orderChecker ! checkout
   }
 }
