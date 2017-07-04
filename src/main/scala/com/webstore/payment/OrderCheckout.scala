@@ -5,8 +5,8 @@ import akka.actor.Props
 import akka.event.Logging
 
 /**
- * Order Message Factory 
- * 
+ * Order Message Factory
+ *
  */
 object Order {
   case class Check(order: Int, value: Double, payMethod: Payment.PayMethod)
@@ -18,7 +18,9 @@ object Order {
 class OrderCheckout extends Actor {
 
   val log = Logging(context.system, this)
+
   val paymentChecker = context.actorOf(Props[PaymentChecker], "paymentChecker")
+
   var orderNum = 0
 
   def receive = {
