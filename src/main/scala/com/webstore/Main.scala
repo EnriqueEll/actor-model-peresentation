@@ -1,7 +1,6 @@
-package com.webstore.payment
+package com.webstore
 
-import akka.actor.ActorSystem
-import akka.actor.Props
+import com.webstore.payment.Store
 
 object Main {
   def main(args: Array[String]): Unit = {
