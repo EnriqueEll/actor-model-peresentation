@@ -4,7 +4,7 @@ import akka.actor.Actor
 import akka.event.Logging
 
 /**
- * Payment Message Factory
+ * Payment Method Factory
  */
 object Payment {
   trait PayMethod
